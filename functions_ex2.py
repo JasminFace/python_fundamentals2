@@ -1,8 +1,5 @@
 def negative(number):
-    if number < 0:
-        return True
-    else:
-        return False
+    return(bool(number<0))
 
 print(negative(-8))
 print(negative(64))
