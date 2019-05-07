@@ -4,28 +4,25 @@ comedy = "'Just Friends'"
 dramedy = "'Love Simon'"
 
 print("Between 1 and 5 (5 being AMAZING), what would you rate documentaries?")
-answer = int(input())
+doc_answer = int(input())
 
-if answer >= 4:
+if doc_answer >= 4:
     print("I recommend watching {}".format(documentary))
-else:
+elif doc_answer < 4:
     print("What would you rate dramas?")
-    answer = int(input())
+    dram_answer = int(input())
 
-    if answer >= 4:
-        print("What would you rate comedies?")
-        answer = int(input())
+    print("What would you rate comedies?")
+    com_answer = int(input())
+        
+    if dram_answer >= 4 and com_answer < 4:
+        print("I recommend watching {}".format(drama))
 
-        if answer >= 4:
-            print("I recommend watching {}".format(dramedy))
-        else:
-            print("I recommend watching {}".format(drama))
+    elif dram_answer < 4 and com_answer >= 4:
+        print("I recommend watching {}".format(comedy))
+    
+    elif dram_answer >= 4 and com_answer >= 4:
+        print("I recommend watching {}".format(dramedy)) 
 
     else:
-        print("What would you rate comedies?")
-        answer = int(input())
-
-        if answer >= 4:
-            print("I recommend watching {}".format(comedy))
-        else:
-            print("There's a Chapters down the road.")
+        print("..maybe read a book.")
